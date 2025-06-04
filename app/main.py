@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.trustedhost import TrustedHostMiddleware
 
 from app.config import settings
-from app.api import health, auth
+from app.api import health, auth, carriers
 
 # Create FastAPI application
 app = FastAPI(
@@ -33,7 +33,7 @@ if settings.BACKEND_CORS_ORIGINS:
 # Include API routes
 app.include_router(health.router, tags=["health"])
 app.include_router(auth.router, prefix=f"{settings.API_V1_STR}/auth", tags=["api-key-validation"])
-
+app.include_router(carriers.router, prefix=f"{settings.API_V1_STR}/carriers", tags=["carriers"])
 
 @app.get("/")
 async def root():
