@@ -30,9 +30,9 @@ class CallOutcome(BaseModel):
     agreed_rate: Optional[float] = Field(None, description="Final agreed rate")
     call_outcome_classification: str = Field(..., description="Call outcome classification")
     carrier_sentiment_classification: str = Field(..., description="Carrier sentiment classification")
-    fmcsa_verified_eligible: Optional[bool] = Field(None, description="Whether carrier passed verification")
-    initial_carrier_offer: Optional[float] = Field(None, description="First offer made")
-    negotiation_rounds: Optional[int] = Field(0, description="Number of negotiation rounds")
+    fmcsa_verified_eligible: Optional[str] = Field(None, description="Whether carrier passed verification")
+    initial_carrier_offer: Optional[str] = Field(None, description="First offer made")
+    negotiation_rounds: Optional[str] = Field(0, description="Number of negotiation rounds")
     raw_extracted_data: Optional[Dict[str, Any]] = Field(None, description="Full extracted data from call")
 
 
