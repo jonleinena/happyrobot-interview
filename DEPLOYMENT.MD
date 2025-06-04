@@ -107,11 +107,7 @@ After deployment, run the database seeding script:
 
 **Cloud Run:**
 ```bash
-gcloud run jobs create seed-data \
-  --image gcr.io/$PROJECT_ID/happyrobot-api \
-  --command python \
-  --args app/core/seed_data.py \
-  --region us-central1
+gcloud run jobs create seed-data --image gcr.io/$PROJECT_ID/happyrobot-api --command python --args app/core/seed_data.py --region us-central1 --set-cloudsql-instances $PROJECT_ID:us-central1:happyrobot-db   --set-env-vars ENVIRONMENT=production --set-secrets DATABASE_URL=DATABASE_URL:latest
   
 gcloud run jobs execute seed-data --region us-central1
 ```
