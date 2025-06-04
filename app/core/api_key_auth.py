@@ -35,7 +35,7 @@ async def get_api_key(api_key: str = Depends(api_key_header)):
         )
     
     # Strip whitespace from incoming API key as well
-    clean_api_key = api_key.replace("ApiKey", "").strip()
+    clean_api_key = api_key.replace("Bearer", "").strip()
     
     if clean_api_key != expected_api_key:
         print(f"Invalid API Key: '{clean_api_key}' != '{expected_api_key}'")
