@@ -134,7 +134,6 @@ Refer to the comprehensive guide in `DEPLOYMENT.MD`.
 The application is fully containerized using Docker:
 
 **Dockerfile Features**:
-- Multi-stage build optimization
 - Non-root user security
 - Minimal Python 3.11 slim base image
 - Optimized layer caching
@@ -199,12 +198,8 @@ These decisions have been made to speed up the implementation with the goal to n
 ## Future Enhancements
 
 Potential improvements for production use:
-- Advanced analytics and reporting capabilities
-- Real-time WebSocket connections for live updates
-- Enhanced authentication and authorization
-- Comprehensive logging and monitoring
+- CI/CD with unit testing and automated deployment
 - API rate limiting and throttling
 - Advanced caching strategies
-- Microservices architecture for scale
 - Dedicated front-end
 
